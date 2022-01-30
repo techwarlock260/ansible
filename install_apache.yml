@@ -1,0 +1,18 @@
+---
+
+- hosts: all
+  tasks:
+  
+  - name: Update Repository Index
+    apt:
+      update_cache: yes 
+
+  - name: install apache2 package
+    apt:
+      name: apache2
+      state: latest
+
+  - name: install php for apache2 support package
+    apt:
+      name: libapache2-mod-php
+      state: latest 
